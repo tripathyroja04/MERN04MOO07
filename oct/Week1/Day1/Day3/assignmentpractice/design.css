@@ -29,10 +29,19 @@
 .left-content{
     text-align: center;
 }
-.right .right-header{
+/* .right .right-header{
     display: flex;
     gap: 100px;
     color: white;
+} */
+ .nav2 {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 100px;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
 }
 
 .right-content{
