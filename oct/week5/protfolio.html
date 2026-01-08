@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rojalin's Portfolio</title>
+
+    <!-- BoxIcon  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Tailwind CDN (for quick demo). For production use a compiled build. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta
+      name="description"
+      content="Personal portfolio built with Tailwind CSS"
+    />
+    <!-- <style>
+    /* Small custom styles */
+    :root { --accent: #06b6d4; }
+    .fancy-underline { background-image: linear-gradient(120deg, rgba(6,182,212,0.18), rgba(99,102,241,0.15)); }
+    /* utility for subtle glass card */
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(6px); }
+    @media (prefers-color-scheme: dark) {
+      .glass { background: rgba(10,11,13,0.5); }
+    }
+  </style> -->
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <!-- NAVBAR -->
+    <header
+      class="sticky top-0 z-30 bg-white/60 backdrop-blur-sm border-b border-slate-200"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="#home" class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white font-bold"
+          >
+            R
+          </div>
+          <span class="font-semibold">Rojalin Tripathy</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-sky-600">About</a>
+          <a href="#projects" class="hover:text-sky-600">Projects</a>
+          <a href="#skills" class="hover:text-sky-600">Skills</a>
+          <a href="#contact" class="hover:text-sky-600">Contact</a>
+        </nav>
+        <a
+          href="#contact"
+          class="hidden md:inline-block px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 text-white text-sm"
+          >Hire me</a
+        >
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button
+            id="btn-mobile"
+            aria-expanded="false"
+            class="p-2 rounded-md focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- mobile menu panel -->
+      <div id="mobile-panel" class="hidden md:hidden border-t border-slate-200">
+        <div class="px-6 py-4 flex flex-col gap-3">
+          <a href="#about" class="block">About</a>
+          <a href="#projects" class="block">Projects</a>
+          <a href="#skills" class="block">Skills</a>
+          <a href="#contact" class="block">Contact</a>
+        </div>
+      </div>
+    </header>
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="#home" class="text-2xl font-bold text-blue-600">Rojalin's Portfolio</a>
+
+      <!-- Hidden checkbox to toggle menu -->
+      <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+      <!-- Label as hamburger icon -->
+      <label for="menu-toggle" class="md:hidden text-gray-700 text-3xl cursor-pointer">
+        ☰
+      </label>
+
+      <!-- Navigation menu -->
+      <ul class="hidden md:flex space-x-8 peer-checked:flex flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none p-4 md:p-0">
+        <li><a href="#about" class="block text-gray-700 hover:underline hover:text-blue-600 transition py-2 md:py-0">About</a></li>
+        <li><a href="#skills" class="block text-gray-700 hover:underline hover:text-blue-600 transition py-2 md:py-0">Skills</a></li>
+        <li><a href="#education" class="block text-gray-700 hover:underline hover:text-blue-600 transition py-2 md:py-0">Education</a></li>
+        <li><a href="#projects" class="block text-gray-700 hover:underline hover:text-blue-600 transition py-2 md:py-0">Projects</a></li>
+        <li><a href="#contact" class="block text-gray-700 hover:underline hover:text-blue-600 transition py-2 md:py-0">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- HERO -->
+    <section id="home" class="max-w-6xl mx-auto px-6 py-20">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+            Hi, I'm
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600"
+              >Rojalin</span
+            >
+            —
+            <span class="block text-xl font-medium text-slate-600 mt-2"
+              >Front-end developer & UI designer</span
+            >
+          </h1>
+          <p class="mt-6 text-slate-700">
+            I build polished, responsive websites and web apps using modern
+            HTML, CSS and Tailwind. My focus is on clean UI, accessibility and
+            performance.
+          </p>
+          <div class="mt-6 flex items-center gap-4">
+            <a
+              href="#projects"
+              class="inline-flex items-center gap-2 px-5 py-2 rounded-full shadow glass hover:scale-[1.01] transition"
+              >See projects</a
+            >
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-slate-200"
+              >Contact me</a
+            >
+          </div>
+          <div class="mt-6 text-sm text-slate-500">
+            <strong>Location:</strong> Odisha, India •
+            <strong>Availability:</strong> Open to work
+          </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <div class="w-72 h-72 rounded-2xl overflow-hidden shadow-lg">
+            <!-- Placeholder image - replace with your photo -->
+            <img
+              alt="profile"
+              src="img.jpg
+          "
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section
+      id="about"
+      class="bg-white py-14 border-t border-b border-slate-100"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 items-center"
+      >
+        <div class="md:col-span-2">
+          <h2 class="text-2xl font-bold">About me</h2>
+          <p class="mt-4 text-slate-700">
+            I'm a front-end developer who loves turning design ideas into fast,
+            accessible UIs. I have experience building responsive layouts,
+            component-based UIs, and working with designers to ship
+            production-ready sites.
+          </p>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-sm text-slate-600">
+            <li>✅ HTML5 & semantic markup</li>
+            <li>✅ Tailwind CSS & utility-first workflow</li>
+            <li>✅ Responsive design & accessibility</li>
+            <li>✅ Build tooling & performance optimizations</li>
+          </ul>
+        </div>
+        <div class="glass p-6 rounded-2xl shadow">
+          <h3 class="font-semibold">Quick facts</h3>
+          <div class="mt-3 text-sm text-slate-700 space-y-2">
+            <div><strong>Experience:</strong> Fresher</div>
+            <div><strong>Stack:</strong> HTML, CSS, Tailwind, JS, React</div>
+            <div><strong>Education:</strong> MCA</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl font-bold">Selected projects</h2>
+          <a href="#projects" class="text-sm text-slate-500">View all</a>
+        </div>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Project card 1 -->
+          <article
+            class="rounded-2xl overflow-hidden shadow hover:shadow-lg transition bg-white"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1521747116042-5a810fda9664?q=80&w=1200&auto=format&fit=crop&s=placeholder"
+              alt="project"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold">E-commerce UI</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                A fast, responsive product listing and checkout UI built with
+                Tailwind and pure HTML components.
+              </p>
+              <div
+                class="mt-4 flex items-center justify-between text-xs text-slate-500"
+              >
+                <span>Tailwind · HTML</span>
+                <a href="#" class="underline">Live demo</a>
+              </div>
+            </div>
+          </article>
+          <!-- Project card 2 -->
+          <article
+            class="rounded-2xl overflow-hidden shadow hover:shadow-lg transition bg-white"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=1200&auto=format&fit=crop&s=placeholder"
+              alt="project"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold">Portfolio Template</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                A minimal portfolio template with an emphasis on accessibility
+                and semantic HTML structure.
+              </p>
+              <div
+                class="mt-4 flex items-center justify-between text-xs text-slate-500"
+              >
+                <span>HTML · Tailwind</span>
+                <a href="#" class="underline">Code</a>
+              </div>
+            </div>
+          </article>
+          <!-- Project card 3 -->
+          <article
+            class="rounded-2xl overflow-hidden shadow hover:shadow-lg transition bg-white"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=1200&auto=format&fit=crop&s=placeholder"
+              alt="project"
+              class="w-full h-40 object-cover"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold">Dashboard UI</h3>
+              <p class="mt-2 text-sm text-slate-600">
+                Interactive dashboard layout crafted with utility classes,
+                focusing on readability and micro-interactions.
+              </p>
+              <div
+                class="mt-4 flex items-center justify-between text-xs text-slate-500"
+              >
+                <span>Tailwind · CSS</span>
+                <a href="#" class="underline">Case study</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section
+      id="skills"
+      class="py-12 bg-gradient-to-b from-transparent to-white"
+    >
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl font-bold">Skills</h2>
+        <div class="mt-6 grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <div class="p-4 glass rounded-xl text-center">
+            <div class="text-lg font-semibold"><i class='bx bxl-html5'></i>HTML</div>
+            <div class="text-xs text-slate-600 mt-2">
+              Semantic markup & accessibility
+            </div>
+          </div>
+          <div class="p-4 glass rounded-xl text-center">
+            <div class="text-lg font-semibold"><i class='bx bxl-tailwind-css' ></i>Tailwind</div>
+            <div class="text-xs text-slate-600 mt-2">
+              Utility-first UI design
+            </div>
+          </div>
+          <div class="p-4 glass rounded-xl text-center">
+            <div class="text-lg font-semibold"><i class='bx bxl-css3' ></i>CSS</div>
+            <div class="text-xs text-slate-600 mt-2">
+              Layout, animations, responsive
+            </div>
+          </div>
+          <div class="p-4 glass rounded-xl text-center">
+            <div class="text-lg font-semibold"><i class='bx bxl-javascript' ></i>JavaScript</div>
+            <div class="text-xs text-slate-600 mt-2">
+              Vanilla JS for small interactions
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-14">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 class="text-2xl font-bold">Get in touch</h2>
+          <p class="mt-3 text-slate-600">
+            Interested in working together? Send a message — I usually reply
+            within a day.
+          </p>
+          <div class="mt-6 space-y-3 text-sm text-slate-700">
+            <div><strong>Email:</strong> rojatripathy89@gmail.com</div>
+            <div><strong>Phone:</strong> +91 7852927889</div>
+          </div>
+        </div>
+        <form class="bg-white p-6 rounded-2xl shadow space-y-4">
+          <div>
+            <label class="block text-xs font-medium text-slate-600"
+              >Your name</label
+            >
+            <input
+              class="mt-1 w-full rounded-md border border-slate-200 px-3 py-2"
+              placeholder="your Name"
+            />
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-600"
+              >Email</label
+            >
+            <input
+              class="mt-1 w-full rounded-md border border-slate-200 px-3 py-2"
+              placeholder="you@company.com"
+            />
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-600"
+              >Message</label
+            >
+            <textarea
+              class="mt-1 w-full rounded-md border border-slate-200 px-3 py-2"
+              rows="4"
+              placeholder="Tell me about your project"
+            ></textarea>
+          </div>
+          <div class="flex justify-end">
+            <button
+              type="submit"
+              class="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 text-white"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200 py-8">
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <div class="text-sm">
+          © <span id="year"></span> Rojalin T. — Built with Tailwind
+        </div>
+        <div class="flex items-center gap-3 text-sm">
+          <a href="https://github.com/tripathyroja04" class="hover:text-sky-600"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/rojalin-tripathy/"
+            class="hover:text-sky-600"
+            >LinkedIn</a
+          >
+          <a href="#" class="hover:text-sky-600">Twitter</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
